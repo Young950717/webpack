@@ -9,12 +9,15 @@ module.exports = {
   output: {
     // filename: 'bundle.js',
     filename: '[name].js', // 使用占位符
+    publicPath: '/',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, 'dist')
   },
   mode: 'development', // 生产或者开发环境
   devtool: 'cheap-module-eval-source-map',
   devServer: {
+    open: true,
+    port: 3000,
     contentBase: path.resolve(__dirname, 'dist')
   },
   module: {
