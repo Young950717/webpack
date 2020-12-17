@@ -3,15 +3,16 @@ const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
 module.exports = {
   entry: {
-    main: './src/index.js',
-    sub: './src/index.js' // 重复打包一次
+    main: './src/index.js'
+    // sub: './src/index.js' // 重复打包一次
   },
   output: {
     // filename: 'bundle.js',
     filename: '[name].js', // 使用占位符
-    publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
+    // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: 'cheap-module-eval-source-map',
   mode: 'development', // 生产或者开发环境
   module: {
     rules: [
