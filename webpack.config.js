@@ -1,5 +1,6 @@
 const path = require('path')
 const htmlwebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
 module.exports = {
   entry: {
     main: './src/index.js'
@@ -55,7 +56,8 @@ module.exports = {
   plugins: [
     new htmlwebpackPlugin({
       template: 'src/public/index.html'
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 
 }
