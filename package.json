@@ -1,0 +1,32 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "webpack-demo",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Young",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "less": "^3.13.0",
+    "less-loader": "^7.1.0",
+    "postcss-loader": "^4.1.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
+  },
+  "browserslist": [
+    "defaults",
+    "last 1 chrome version",
+    "not ie < 8",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
+}
