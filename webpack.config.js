@@ -1,6 +1,7 @@
 const path = require('path')
 const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
+const webpack = require('webpack')
 module.exports = {
   entry: {
     main: './src/index.js'
@@ -18,6 +19,8 @@ module.exports = {
   devServer: {
     open: true,
     port: 3000,
+    hot: true, //热更新
+    hotOnly: true,
     contentBase: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -59,7 +62,15 @@ module.exports = {
           loader: 'postcss-loader'
         }
         ]
-
+      },
+      {
+        test: /\.css$/,
+        // loader有执行顺序，从下到上，从右到左
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ]
       }
     ]
   },
@@ -67,7 +78,8 @@ module.exports = {
     new htmlwebpackPlugin({
       template: 'src/public/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 
 }
