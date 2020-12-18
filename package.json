@@ -4,9 +4,8 @@
   "version": "1.0.0",
   "description": "webpack-demo",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
-    "middle": "nodemon server.js"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "webpack --config ./build/webpack.prod.js"
   },
   "keywords": [],
   "author": "Young",
@@ -30,7 +29,8 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^4.0.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.2"
   },
   "browserslist": [
     "defaults",

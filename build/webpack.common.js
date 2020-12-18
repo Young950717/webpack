@@ -1,21 +1,9 @@
 const path = require('path')
 const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
-const webpack = require('webpack')
-
-// babel 业务代码降级
-// presets: [
-//   ['@babel/preset-env', {
-//     targets: {
-//       chrome: '67'
-//     },
-//     useBuiltIns: 'usage'
-//   }]
-// ]
 module.exports = {
   entry: {
     main: './src/index.js'
-    // sub: './src/index.js' // 重复打包一次
   },
   output: {
     // filename: 'bundle.js',
@@ -23,15 +11,6 @@ module.exports = {
     publicPath: './',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, 'dist')
-  },
-  mode: 'development', // 生产或者开发环境
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    open: true,
-    port: 3000,
-    hot: true, //热更新
-    hotOnly: true,
-    contentBase: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -97,10 +76,5 @@ module.exports = {
       template: 'src/public/index.html'
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  optimization: {
-    usedExports: true
-  }
-
+  ]
 }
