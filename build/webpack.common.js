@@ -10,7 +10,7 @@ module.exports = {
     filename: '[name].js', // 使用占位符
     publicPath: './',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '../dist')
   },
   module: {
     rules: [
