@@ -2,6 +2,16 @@ const path = require('path')
 const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
 const webpack = require('webpack')
+
+// babel 业务代码降级
+// presets: [
+//   ['@babel/preset-env', {
+//     targets: {
+//       chrome: '67'
+//     },
+//     useBuiltIns: 'usage'
+//   }]
+// ]
 module.exports = {
   entry: {
     main: './src/index.js'
@@ -25,6 +35,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        // babel处理es6
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        }
+      },
       {
         // 处理图片
         test: /\.(jpg|png|gif)$/,

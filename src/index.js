@@ -1,21 +1,11 @@
-// import './style.css'
-// var btn = document.createElement('button')
-// btn.innerHTML = '新增'
-// document.body.appendChild(btn)
-// btn.addEventListener('click', function () {
-//     var div = document.createElement('div')
-//     div.innerHTML = 'item'
-//     document.body.appendChild(div)
-// })
-import counter from './counter'
-import number from './number'
-counter()
-number()
+// import "@babel/polyfill"
+const arr = [
+  new Promise((reslove, reject) => { }),
+  new Promise((reslove, reject) => { }),
+  new Promise((reslove, reject) => { }),
+  new Promise((reslove, reject) => { })
+]
 
-// 本质实现热更新的原理
-if (module.hot) {
-  module.hot.accept('./number.js', () => {
-    document.body.removeChild(document.getElementById('number'))
-    number()
-  })
-}
+arr.forEach(i => {
+  console.log(i)
+})
