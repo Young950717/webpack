@@ -76,5 +76,10 @@ module.exports = {
       template: 'src/public/index.html'
     }),
     new CleanWebpackPlugin(),
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 }
