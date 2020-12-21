@@ -1,15 +1,20 @@
-// import _ from 'lodash'
-// console.log(_.join(['a', 'b', 'c']))
-// console.log(_.join(['a', 'b', 'c']), '***')
+// import test from './test'
+// console.log(test.name)
 
-function getComponent () {
-  return import('lodash').then(({ default: _ }) => {
-    const el = document.createElement('div')
-    el.innerHTML = _.join(['Yang', 'Zai'], '-')
-    return el
-  })
-}
+import _ from 'lodash'
+import $ from 'jquery'
+const el = document.createElement('div')
+el.innerHTML = _.join(['Yang', 'Zai'], '-')
+document.body.appendChild(el)
 
-getComponent().then(el => {
-  document.body.appendChild(el)
-})
+// function getComponent () {
+//   return import(/* webpackChunkName: 'loadsh' */ 'lodash').then(({ default: _ }) => {
+//     const el = document.createElement('div')
+//     el.innerHTML = _.join(['Yang', 'Zai'], '-')
+//     return el
+//   })
+// }
+
+// getComponent().then(el => {
+//   document.body.appendChild(el)
+// })
