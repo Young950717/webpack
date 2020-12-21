@@ -17,8 +17,20 @@ optimization: {
 ```javascript
 optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'initial'
     }
   }
 ```
-* 异步代码 无需配置config文件，会自动分割，会单独打包到一个文件
+* 异步代码 
+```javascript
+optimization: {
+    splitChunks: {
+      chunks: 'async'
+    }
+  }
+```
+另外可以在业务代码中使用魔法注释让打包的文件名符合你的要求
+```javascript
+import(/* webpackChunkName: 'lodash' */ 'lodash')
+```
+需要安装`@babel/plugin-syntax-dynamic-import` 并且在babelrc的plugins里面配置，才会生效
