@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
-    "dev-build": "webpack --config ./build/webpack.dev.js"
+    "dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.js"
   },
   "keywords": [],
   "author": "Young",
@@ -46,6 +46,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@babel/runtime-corejs2": "^7.12.5",
+    "core-js": "^3.8.1",
     "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

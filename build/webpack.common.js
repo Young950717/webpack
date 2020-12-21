@@ -79,8 +79,7 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      // chunks: 'async', // 只对异步代码作分割
-      chunks: 'all', // 可选值 async all initial
+      chunks: 'all', // 可选值 async all initial 默认async
       minSize: 30000, // 小于这个size就不分割
       minChunks: 2, // 引用的依赖至少是2个chuck.js才会分割
       maxAsyncRequests: 5, // 同时加载5个请求
