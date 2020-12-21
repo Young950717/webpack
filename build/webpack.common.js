@@ -8,6 +8,7 @@ module.exports = {
   output: {
     // filename: 'bundle.js',
     filename: '[name].js', // 使用占位符
+    chunkFilename: '[name].chunk.js',
     publicPath: './',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, '../dist')
@@ -41,33 +42,6 @@ module.exports = {
         use: {
           loader: 'file-loader'
         }
-      },
-      {
-        test: /\.less$/,
-        // loader有执行顺序，从下到上，从右到左
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2
-            // modules: true // 模块化打包
-          }
-        }, {
-          loader: 'less-loader'
-        }, {
-          loader: 'postcss-loader'
-        }
-        ]
-      },
-      {
-        test: /\.css$/,
-        // loader有执行顺序，从下到上，从右到左
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
       }
     ]
   },
@@ -75,9 +49,10 @@ module.exports = {
     new htmlwebpackPlugin({
       template: 'src/public/index.html'
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   optimization: {
+    usedExports: true,
     splitChunks: {
       chunks: 'all', // 可选值 async all initial 默认async
       minSize: 30000, // 小于这个size就不分割

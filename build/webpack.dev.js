@@ -12,11 +12,39 @@ const devConfig = {
     hotOnly: true,
     contentBase: path.resolve(__dirname, 'dist')
   },
+  modlue: {
+    rules: [
+      {
+        test: /\.less$/,
+        // loader有执行顺序，从下到上，从右到左
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2
+            // modules: true // 模块化打包
+          }
+        }, {
+          loader: 'less-loader'
+        }, {
+          loader: 'postcss-loader'
+        }
+        ]
+      },
+      {
+        test: /\.css$/,
+        // loader有执行顺序，从下到上，从右到左
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ]
+      }
+    ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ],
-  optimization: {
-    usedExports: true
-  }
+  ]
 }
 module.exports = merge(commonConfig, devConfig)

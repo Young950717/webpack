@@ -1,26 +1,18 @@
 {
-  "errors": [],
+  "errors": [
+    "./src/index.js\nModule not found: Error: Can't resolve 'style.css' in 'D:\\resources\\project\\webpack\\src'\nresolve 'style.css' in 'D:\\resources\\project\\webpack\\src'\n  Parsed request is a module\n  using description file: D:\\resources\\project\\webpack\\package.json (relative path: ./src)\n    Field 'browser' doesn't contain a valid alias configuration\n    resolve as module\n      D:\\resources\\project\\webpack\\src\\node_modules doesn't exist or is not a directory\n      D:\\resources\\project\\node_modules doesn't exist or is not a directory\n      D:\\resources\\node_modules doesn't exist or is not a directory\n      D:\\node_modules doesn't exist or is not a directory\n      looking for modules in D:\\resources\\project\\webpack\\node_modules\n        using description file: D:\\resources\\project\\webpack\\package.json (relative path: ./node_modules)\n          Field 'browser' doesn't contain a valid alias configuration\n          using description file: D:\\resources\\project\\webpack\\package.json (relative path: ./node_modules/style.css)\n            no extension\n              Field 'browser' doesn't contain a valid alias configuration\n              D:\\resources\\project\\webpack\\node_modules\\style.css doesn't exist\n            .wasm\n              Field 'browser' doesn't contain a valid alias configuration\n              D:\\resources\\project\\webpack\\node_modules\\style.css.wasm doesn't exist\n            .mjs\n              Field 'browser' doesn't contain a valid alias configuration\n              D:\\resources\\project\\webpack\\node_modules\\style.css.mjs doesn't exist\n            .js\n              Field 'browser' doesn't contain a valid alias configuration\n              D:\\resources\\project\\webpack\\node_modules\\style.css.js doesn't exist\n            .json\n              Field 'browser' doesn't contain a valid alias configuration\n              D:\\resources\\project\\webpack\\node_modules\\style.css.json doesn't exist\n            as directory\n              D:\\resources\\project\\webpack\\node_modules\\style.css doesn't exist\n[D:\\resources\\project\\webpack\\src\\node_modules]\n[D:\\resources\\project\\node_modules]\n[D:\\resources\\node_modules]\n[D:\\node_modules]\n[D:\\resources\\project\\webpack\\node_modules\\style.css]\n[D:\\resources\\project\\webpack\\node_modules\\style.css.wasm]\n[D:\\resources\\project\\webpack\\node_modules\\style.css.mjs]\n[D:\\resources\\project\\webpack\\node_modules\\style.css.js]\n[D:\\resources\\project\\webpack\\node_modules\\style.css.json]\n @ ./src/index.js 16:0-19"
+  ],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "b110b203d0d66362c293",
-  "time": 1012,
-  "builtAt": 1608537830686,
+  "hash": "fe19387a5ee4e7d860da",
+  "time": 657,
+  "builtAt": 1608540491753,
   "publicPath": "./",
   "outputPath": "D:\\resources\\project\\webpack\\dist",
   "assetsByChunkName": {
     "main": "main.js"
   },
   "assets": [
-    {
-      "name": "0.js",
-      "size": 1211,
-      "chunks": [
-        0
-      ],
-      "chunkNames": [],
-      "info": {},
-      "emitted": true
-    },
     {
       "name": "index.html",
       "size": 266,
@@ -31,7 +23,7 @@
     },
     {
       "name": "main.js",
-      "size": 37206,
+      "size": 33856,
       "chunks": [
         "main"
       ],
@@ -69,110 +61,21 @@
   },
   "chunks": [
     {
-      "id": 0,
-      "rendered": true,
-      "initial": false,
-      "entry": false,
-      "size": 143,
-      "names": [],
-      "files": [
-        "0.js"
-      ],
-      "hash": "f1656d081bfeb6d9d9cc",
-      "siblings": [],
-      "parents": [
-        "main"
-      ],
-      "children": [],
-      "childrenByOrder": {},
-      "modules": [
-        {
-          "id": "./src/click.js",
-          "identifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\click.js",
-          "name": "./src/click.js",
-          "index": 1,
-          "index2": 1,
-          "size": 143,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            0
-          ],
-          "issuer": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-          "issuerId": "./src/index.js",
-          "issuerName": "./src/index.js",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 70,
-                "building": 868
-              }
-            }
-          ],
-          "profile": {
-            "factory": 4,
-            "building": 13
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/index.js",
-              "moduleIdentifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-              "module": "./src/index.js",
-              "moduleName": "./src/index.js",
-              "type": "import()",
-              "userRequest": "./click",
-              "loc": "2:2-19"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": [
-            "default"
-          ],
-          "optimizationBailout": [],
-          "depth": 1,
-          "source": "export default function handler() {\n  const el = document.createElement('div');\n  el.innerHTML = 'yang zai';\n  document.body.appendChild(el);\n}"
-        }
-      ],
-      "filteredModules": 0,
-      "origins": [
-        {
-          "moduleId": "./src/index.js",
-          "module": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-          "moduleIdentifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-          "moduleName": "./src/index.js",
-          "loc": "2:2-19",
-          "request": "./click",
-          "reasons": []
-        }
-      ]
-    },
-    {
       "id": "main",
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 116,
+      "size": 554,
       "names": [
         "main"
       ],
       "files": [
         "main.js"
       ],
-      "hash": "1c92c8850496800ff3f9",
+      "hash": "f947bf500b9b6be0433c",
       "siblings": [],
       "parents": [],
-      "children": [
-        0
-      ],
+      "children": [],
       "childrenByOrder": {},
       "modules": [
         {
@@ -181,7 +84,7 @@
           "name": "./src/index.js",
           "index": 0,
           "index2": 0,
-          "size": 116,
+          "size": 554,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -194,8 +97,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 70,
-            "building": 868
+            "factory": 67,
+            "building": 548
           },
           "failed": false,
           "errors": 0,
@@ -213,10 +116,10 @@
             }
           ],
           "usedExports": true,
-          "providedExports": null,
+          "providedExports": [],
           "optimizationBailout": [],
           "depth": 0,
-          "source": "document.addEventListener('click', () => {\n  import('./click').then(({\n    default: fn\n  }) => {\n    fn();\n  });\n});"
+          "source": "// import _ from 'lodash'\n// const el = document.createElement('div')\n// el.innerHTML = _.join(['Yang', 'Zai'], '-')\n// document.body.appendChild(el)\n// async function getComponent () {\n//   const { default: _ } = await import(/* webpackChunkName: 'lodash' */ 'lodash')\n//   const el = document.createElement('div')\n//   el.innerHTML = _.join(['Yang', 'Zai'], '-')\n//   return el\n// }\n// document.addEventListener('click', () => {\n//   getComponent().then(el => {\n//     document.body.appendChild(el)\n//   })\n// })\nimport 'style.css';\nconsole.log('123');"
         }
       ],
       "filteredModules": 0,
@@ -234,67 +137,12 @@
   ],
   "modules": [
     {
-      "id": "./src/click.js",
-      "identifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\click.js",
-      "name": "./src/click.js",
-      "index": 1,
-      "index2": 1,
-      "size": 143,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        0
-      ],
-      "issuer": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-      "issuerId": "./src/index.js",
-      "issuerName": "./src/index.js",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 70,
-            "building": 868
-          }
-        }
-      ],
-      "profile": {
-        "factory": 4,
-        "building": 13
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/index.js",
-          "moduleIdentifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
-          "module": "./src/index.js",
-          "moduleName": "./src/index.js",
-          "type": "import()",
-          "userRequest": "./click",
-          "loc": "2:2-19"
-        }
-      ],
-      "usedExports": true,
-      "providedExports": [
-        "default"
-      ],
-      "optimizationBailout": [],
-      "depth": 1,
-      "source": "export default function handler() {\n  const el = document.createElement('div');\n  el.innerHTML = 'yang zai';\n  document.body.appendChild(el);\n}"
-    },
-    {
       "id": "./src/index.js",
       "identifier": "D:\\resources\\project\\webpack\\node_modules\\_babel-loader@8.2.2@babel-loader\\lib\\index.js!D:\\resources\\project\\webpack\\src\\index.js",
       "name": "./src/index.js",
       "index": 0,
       "index2": 0,
-      "size": 116,
+      "size": 554,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -307,8 +155,8 @@
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 70,
-        "building": 868
+        "factory": 67,
+        "building": 548
       },
       "failed": false,
       "errors": 0,
@@ -326,17 +174,17 @@
         }
       ],
       "usedExports": true,
-      "providedExports": null,
+      "providedExports": [],
       "optimizationBailout": [],
       "depth": 0,
-      "source": "document.addEventListener('click', () => {\n  import('./click').then(({\n    default: fn\n  }) => {\n    fn();\n  });\n});"
+      "source": "// import _ from 'lodash'\n// const el = document.createElement('div')\n// el.innerHTML = _.join(['Yang', 'Zai'], '-')\n// document.body.appendChild(el)\n// async function getComponent () {\n//   const { default: _ } = await import(/* webpackChunkName: 'lodash' */ 'lodash')\n//   const el = document.createElement('div')\n//   el.innerHTML = _.join(['Yang', 'Zai'], '-')\n//   return el\n// }\n// document.addEventListener('click', () => {\n//   getComponent().then(el => {\n//     document.body.appendChild(el)\n//   })\n// })\nimport 'style.css';\nconsole.log('123');"
     }
   ],
   "filteredModules": 0,
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
-      "filteredEntries": 5,
+      "filteredEntries": 2,
       "debug": false
     }
   },
@@ -426,7 +274,7 @@
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 21,
+                "factory": 20,
                 "building": 15
               },
               "failed": false,
@@ -484,7 +332,7 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 21,
+            "factory": 20,
             "building": 15
           },
           "failed": false,

@@ -34,3 +34,5 @@ optimization: {
 import(/* webpackChunkName: 'lodash' */ 'lodash')
 ```
 需要安装`@babel/plugin-syntax-dynamic-import` 并且在babelrc的plugins里面配置，才会生效
+### preload与prefetch
+`prefetch`是在主线程加载完，等页面/网络空闲了才去加载js文件，而`preload`是和主线程一起加载
