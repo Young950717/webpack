@@ -82,7 +82,7 @@ module.exports = {
       // chunks: 'async', // 只对异步代码作分割
       chunks: 'all', // 可选值 async all initial
       minSize: 30000, // 小于这个size就不分割
-      minChunks: 1, // 入口文件引入次数
+      minChunks: 2, // 引用的依赖至少是2个chuck.js才会分割
       maxAsyncRequests: 5, // 同时加载5个请求
       maxInitialRequests: 3,
       automaticNameDelimiter: '~', // 文件名称连接符
@@ -90,8 +90,8 @@ module.exports = {
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10, // 优先级值
-          filename: 'vendors.js' // 所有包统一到这个文件的名字
+          priority: -10 // 优先级值
+          // filename: '[name][.ext]' // 所有包统一到这个文件的名字
         },
         default: {
           // minChunks: 2,
