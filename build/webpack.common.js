@@ -1,8 +1,11 @@
 const path = require('path')
+const { merge } = require('webpack-merge')
+const devConfig = require('./webpack.dev')
+const prodConfig = require('./webpack.prod')
 const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
 const webpack = require('webpack')
-module.exports = {
+const commonConfig = {
   entry: {
     main: './src/index.js'
   },
@@ -18,9 +21,14 @@ module.exports = {
         // babel处理es6
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+          // { 新版本不支持了
+          //   loader: 'imports-loader?this=>window'
+          // }
+        ]
       },
       {
         // 处理图片
@@ -57,9 +65,9 @@ module.exports = {
     })
   ],
   optimization: {
-    // runtimeChunk: {
-    //   name: 'runtime'
-    // },
+    runtimeChunk: {
+      name: 'runtime'
+    },
     usedExports: true,
     splitChunks: {
       chunks: 'all', // 可选值 async all initial 默认async
@@ -84,4 +92,14 @@ module.exports = {
       }
     }
   }
+}
+
+module.exports = env => {
+  // if (env && env.production) {
+  //   //线上
+  //   return merge(commonConfig, prodConfig)
+  // } else {
+  //   return merge(commonConfig, devConfig)
+  // }
+  return env && env.production ? merge(commonConfig, prodConfig) : merge(commonConfig, devConfig)
 }

@@ -1,5 +1,3 @@
-const { merge } = require('webpack-merge')
-const commonConfig = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const prodConfig = {
@@ -47,4 +45,4 @@ const prodConfig = {
     chunkFilename: '[name].[contenthash].js',
   }
 }
-module.exports = merge(commonConfig, prodConfig)
+module.exports = prodConfig
