@@ -36,3 +36,15 @@ import(/* webpackChunkName: 'lodash' */ 'lodash')
 需要安装`@babel/plugin-syntax-dynamic-import` 并且在babelrc的plugins里面配置，才会生效
 ### preload与prefetch
 `prefetch`是在主线程加载完，等页面/网络空闲了才去加载js文件，而`preload`是和主线程一起加载
+
+## 浏览器缓存与webpack
+使用`contenthash`  
+ 原理 源代码不变，打包出来的哈希值不变  
+ * 配置  
+ 在output选项中  
+```javascript
+ output: {
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].js',
+  }
+```

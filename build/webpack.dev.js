@@ -45,6 +45,10 @@ const devConfig = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  output: {
+    filename: '[name].js', // 使用占位符
+    chunkFilename: '[name].js',
+  }
 }
 module.exports = merge(commonConfig, devConfig)

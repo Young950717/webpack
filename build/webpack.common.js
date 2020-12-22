@@ -7,8 +7,6 @@ module.exports = {
   },
   output: {
     // filename: 'bundle.js',
-    filename: '[name].js', // 使用占位符
-    chunkFilename: '[name].chunk.js',
     publicPath: './',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, '../dist')
@@ -45,6 +43,7 @@ module.exports = {
       }
     ]
   },
+  performance: false,
   plugins: [
     new htmlwebpackPlugin({
       template: 'src/public/index.html'
@@ -52,11 +51,14 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   optimization: {
+    runtimeChunk: {
+      name: 'runtime'
+    },
     usedExports: true,
     splitChunks: {
       chunks: 'all', // 可选值 async all initial 默认async
       minSize: 30000, // 小于这个size就不分割
-      minChunks: 2, // 引用的依赖至少是2个chuck.js才会分割
+      minChunks: 1, // 引用的依赖至少是2个chuck.js才会分割
       maxAsyncRequests: 5, // 同时加载5个请求
       maxInitialRequests: 3,
       automaticNameDelimiter: '~', // 文件名称连接符

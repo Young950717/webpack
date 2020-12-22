@@ -41,6 +41,10 @@ const prodConfig = {
       filename: '[name].css',
       chunkFilename: '[name].chunk.css'
     })
-  ]
+  ],
+  output: {
+    filename: '[name].[contenthash].js', // 使用占位符
+    chunkFilename: '[name].[contenthash].js',
+  }
 }
 module.exports = merge(commonConfig, prodConfig)
