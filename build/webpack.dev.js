@@ -7,12 +7,12 @@ const devConfig = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     open: true,
-    port: 8080,
+    port: 3000,
     hot: true, //热更新
     hotOnly: true,
     contentBase: path.resolve(__dirname, 'dist')
   },
-  modlue: {
+  module: {
     rules: [
       {
         test: /\.less$/,

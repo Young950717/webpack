@@ -1,13 +1,14 @@
 const path = require('path')
 const htmlwebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 删除dist的东西
+const webpack = require('webpack')
 module.exports = {
   entry: {
     main: './src/index.js'
   },
   output: {
     // filename: 'bundle.js',
-    publicPath: './',
+    publicPath: '/',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, '../dist')
   },
@@ -48,12 +49,17 @@ module.exports = {
     new htmlwebpackPlugin({
       template: 'src/public/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    // 自动引入
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      _join: ['lodash', 'join']
+    })
   ],
   optimization: {
-    runtimeChunk: {
-      name: 'runtime'
-    },
+    // runtimeChunk: {
+    //   name: 'runtime'
+    // },
     usedExports: true,
     splitChunks: {
       chunks: 'all', // 可选值 async all initial 默认async

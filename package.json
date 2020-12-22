@@ -32,10 +32,10 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.1.0",
     "style-loader": "^2.0.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.2.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
     "webpack-dev-middleware": "^4.0.2",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^3.5.1",
     "webpack-merge": "^5.7.2"
   },
   "browserslist": [
