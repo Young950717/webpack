@@ -48,3 +48,48 @@ import(/* webpackChunkName: 'lodash' */ 'lodash')
     chunkFilename: '[name].[contenthash].js',
   }
 ```
+
+## 打包一个library库
+`webpack.config.js`
+```javascript
+const path = require('path')
+module.exports = {
+  mode: 'production',
+  entry: './src/index.js',
+  externals: 'lodash',  // 防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'library.js',
+    libraryTarget: 'umd', // 通用引入方式
+    library: 'library' // script标签引入全局变量
+  }
+}
+```
+
+## 打包typescript
+首先要安装`ts-loader`,在config文件中配置  
+```javascript
+module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
+    ]
+  }
+```
+接着在主目录下新建一个`tsconfig.json`文件 基础配置
+```javascript
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "ES6", // es-nodule引入的方法
+    "target": "ES5", // 打包生成的代码为es5
+    "allowJs": true // 允许引入js库
+  }
+}
+```
+注意如果需要引入第三方包 比如lodash jquery这种的话需要设置allowJs为true  
+如果需要ts强提示第三方包库的代码类型检测的话需要下载对应的`@type/xxx`包  
+比如`"@types/lodash"` `"@types/jquery"`
