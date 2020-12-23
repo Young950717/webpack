@@ -8,7 +8,13 @@ const devConfig = {
     port: 3000,
     hot: true, //热更新
     hotOnly: true,
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
+    proxy: {
+      '/': {
+        target: 'http://www.dell-lee.com'
+
+      }
+    }
   },
   module: {
     rules: [
