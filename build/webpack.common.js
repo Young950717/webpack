@@ -11,7 +11,7 @@ const commonConfig = {
   },
   output: {
     // filename: 'bundle.js',
-    publicPath: '/',
+    // publicPath: '',
     // publicPath: 'http://cdn.com/', // 静态资源需要放到cdn上的话 加个公共前缀地址
     path: path.resolve(__dirname, '../dist')
   },

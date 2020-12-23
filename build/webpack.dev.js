@@ -5,14 +5,23 @@ const devConfig = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     open: true,
-    port: 3000,
+    port: 8080,
     hot: true, //热更新
     hotOnly: true,
+    historyApiFallback: true,
     contentBase: path.resolve(__dirname, 'dist'),
     proxy: {
-      '/': {
-        target: 'http://www.dell-lee.com'
-
+      '/react/api': {
+        target: 'http://www.dell-lee.com',
+        secure: false, // 默认对https不生效
+        pathRewrite: { // 路径重写
+          'header.json': 'demo.json'
+        },
+        changeOrigin: true, // 支持更多域名访问
+        headers: {
+          host: 'http://www.dell-lee.com',
+        },
+        ws: false
       }
     }
   },
