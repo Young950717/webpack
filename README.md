@@ -93,3 +93,22 @@ module: {
 注意如果需要引入第三方包 比如lodash jquery这种的话需要设置allowJs为true  
 如果需要ts强提示第三方包库的代码类型检测的话需要下载对应的`@type/xxx`包  
 比如`"@types/lodash"` `"@types/jquery"`
+
+## 使用devServer进行请求转发
+基础配置
+```javascript
+proxy: {
+  '/react/api': {
+    target: 'http://www.xxx.com',
+    secure: false, // 默认对https不生效
+    pathRewrite: { // 路径重写
+      'header.json': 'demo.json'
+    },
+    changeOrigin: true, // 支持更多域名访问
+    headers: {
+      host: 'www.xxx.com',
+    }
+  }
+}
+ ```
+ 更多配置可前往webpack官网查看

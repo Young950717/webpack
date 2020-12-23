@@ -53,8 +53,6 @@
     "@babel/runtime-corejs2": "^7.12.5",
     "core-js": "^3.8.1",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "lodash": "^4.17.20"
   }
 }
